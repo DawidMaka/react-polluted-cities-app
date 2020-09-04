@@ -2,10 +2,10 @@
 
 Technologies and tools I've used with this project:
 
-- HTML5
 - React
+- React Hooks
 - Styled Components
-- CSS3
+- REST API
 
 Live: https://web-devvv.github.io/react-polluted-cities-app/
 
