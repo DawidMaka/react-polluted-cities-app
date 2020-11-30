@@ -9,14 +9,14 @@ const defaultParams = {
   redirects: 1,
   prop: 'extracts',
   exintro: '',
-  exsentences: 2,
+  exsentences: 2
 };
 
-const fetchWikipediaData = titles => {
+const fetchWikipediaData = ( titles: string ) => {
   const queryParams = { ...defaultParams, titles };
-  const params = createQueryParams(queryParams);
+  const params = createQueryParams( queryParams );
 
-  return axios(`${wikipediaUrl}&${params}`);
+  return axios( `${wikipediaUrl}&${params}` );
 };
 
 export default fetchWikipediaData;

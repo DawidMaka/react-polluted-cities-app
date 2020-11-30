@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { countries } from 'base/variables';
 import Datalist from 'components/Datalist/Datalist';
@@ -31,39 +30,35 @@ const StyledFormGroup = styled.div`
   }
 `;
 
-const SearchForm = ({ role }) => {
-  const { doFetch, isLoading } = useContext(PageContext);
+type SearchFormProps = {
+  role?: string;
+};
+
+const SearchForm = React.memo<SearchFormProps>( ( { ...props } ) => {
+  const context = useContext( PageContext )!;
 
   return (
     <StyledForm
-      role={role}
-      onSubmit={e => {
+      {...props}
+      onSubmit={( e ) => {
         e.preventDefault();
-
-        const { value } = e.target.querySelector("input[name='country']");
-
-        doFetch(value);
+        const formElement = e.target as HTMLFormElement;
+        const value = ( formElement.querySelector( 'input[name=\'country\']' )! as HTMLInputElement ).value;
+        context.doFetch( value );
       }}
     >
       <StyledFormGroup>
-        <Label srOnly labelName="Country name:">
-          <Input autoComplete="off" name="country" list="countries" />
+        <Label labelName="Country name:" srOnly>
+          <Input type="text" autoComplete="off" name="country" list="countries" />
           <Datalist id="countries" countries={countries} />
         </Label>
       </StyledFormGroup>
-      <Button type="submit" disabled={isLoading}>
+      <Button type="submit" disabled={context.isLoading} backgroundColor="#007bff">
         Search
       </Button>
     </StyledForm>
   );
-};
-
-SearchForm.propTypes = {
-  role: PropTypes.string,
-};
-
-SearchForm.defaultProps = {
-  role: '',
-};
+} );
+SearchForm.displayName = 'SearchForm';
 
 export default SearchForm;

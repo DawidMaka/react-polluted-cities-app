@@ -17,5 +17,6 @@ const ListItem = styled.li`
     border-bottom-left-radius: 0.25rem;
   }
 `;
+ListItem.displayName = 'ListItem';
 
 export default ListItem;

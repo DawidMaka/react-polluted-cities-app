@@ -6,5 +6,6 @@ const ErrorMessage = styled.p`
   font-weight: 700;
   color: red;
 `;
+ErrorMessage.displayName = 'ErrorMessage';
 
 export default ErrorMessage;

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledInput = styled.input`
@@ -17,14 +16,16 @@ const StyledInput = styled.input`
   border-radius: 0.25rem;
 `;
 
-const Input = ({ type, ...props }) => <StyledInput type={type} {...props} />;
-
-Input.propTypes = {
-  type: PropTypes.string,
+type InputProps = {
+  type?: string;
+  autoComplete?: string;
+  name?: string;
+  list?: string;
 };
 
-Input.defaultProps = {
-  type: 'text',
-};
+const Input = React.memo<InputProps>( ( { ...props } ) => {
+  return <StyledInput {...props} />;
+} );
+Input.displayName = 'Input';
 
 export default Input;

@@ -18,10 +18,13 @@ const StyledSpinner = styled.div`
   }
 `;
 
-const Spinner = () => (
-  <StyledSpinner aria-busy="true" role="progressbar">
-    <span className="sr-only">Loading content...</span>
-  </StyledSpinner>
-);
+const Spinner = () => {
+  return (
+    <StyledSpinner aria-busy="true" role="progressbar">
+      <span className="sr-only">Loading content...</span>
+    </StyledSpinner>
+  );
+};
+Spinner.displayName = 'Spinner';
 
 export default Spinner;
