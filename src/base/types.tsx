@@ -31,7 +31,7 @@ export interface WikipediaResponse {
     batchcomplete: string;
     query: {
       pages: {
-        [key: number]: Pages
+        [key: string]: Pages
       }
     }
   }

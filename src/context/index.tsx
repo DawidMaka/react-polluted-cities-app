@@ -1,7 +1,7 @@
 import React from 'react';
 
 type State = {
-  doFetch: any;
+  doFetch: ( value: string ) => void;
   isLoading: boolean;
 };
 

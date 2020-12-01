@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Pages } from 'base/types';
 import CityItem from 'components/CityList/CityItem/CityItem';
 import List from 'components/List/List';
 
@@ -8,12 +9,7 @@ const StyledList = styled( List )`
 `;
 
 type CityListProps = {
-  cities: {
-    pageid: number;
-    title: string;
-    extract: string;
-    ns: number;
-  }[];
+  cities: Pages[];
 };
 
 const CityList = React.memo<CityListProps>( ( { cities } ) => {
