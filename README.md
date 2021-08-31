@@ -8,9 +8,9 @@ Technologies and tools I've used with this project:
 - Styled Components
 - REST API
 
-Live: https://web-devvv.github.io/react-polluted-cities-app/
+Live: https://DawidMaka.github.io/react-polluted-cities-app/
 
-Src: https://github.com/web-deVVV/react-polluted-cities-app/tree/master/src
+Src: https://github.com/DawidMaka/react-polluted-cities-app/tree/master/src
 
 ## Details
 
@@ -19,7 +19,7 @@ A web app that finds the 10 most polluted cities based on a selected country: Po
 ## Instalation
 
 ```sh
-git clone https://github.com/web-deVVV/react-polluted-cities-app [folder-name]
+git clone https://github.com/DawidMaka/react-polluted-cities-app [folder-name]
 cd [folder-name]
 npm install
 ```
